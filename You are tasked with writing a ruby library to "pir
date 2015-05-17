@@ -13,8 +13,6 @@ The specification for piratization is outlined below.
 
 - If it encounters a instance that includes the module Ship it should call #board! on it
 
---HUH?
-
 
 
 - If #board! raises PartyRepelledError it should replace the instance with a new instance of ShipWreck
@@ -28,7 +26,8 @@ The specification for piratization is outlined below.
 - Symbols should raise WhatBeThisError with the message "'Ere, what be a 'symbol'"
 
 
-- Version controlled with git
+- Version controlled with git -- ?
+
 - You may use any 3rd party code you wish, ideally gems will be managed with Bundler
 - Available as a class method, eg Piratize.process ruby_object
 - Available as a module that can be added to any classes
