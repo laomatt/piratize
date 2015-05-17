@@ -16,7 +16,8 @@ module Ship
       output = phrase.split(' ').map {|word| ['gold', 'treasure', 'coins', 'coin'].include?(word.downcase) ? '' : word}
 
       #then we account for the floats
-      output.map! {|word| (word.split('').include?('.'))&&(word.split('').none?{|e| 'abcdefghijklmnopqrstuvwxyz'.split('').include?(e.downcase)}) ? float_helper(word.to_f) : word}.join(' ')
+      output.map! {|word| word.scan(/\d*\.\d*/).length>0 ? float_helper(word.scan(/\d*\.\d*/).first.to_f) : word}.join(' ')
+
     end
 
     def process(array, position=0, boarders=BoardingParty.new(0))
