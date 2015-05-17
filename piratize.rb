@@ -113,9 +113,9 @@ ship = ShipWreck.new queen_anns_revenge
 # queen_anns_revenge.process(["Hello, my name is Matt", "I live in San Francisco, at exactl 2.3 miles from the dogpatch area", "I am a web developer", "looking for a full time position", "where I can earn gold", "thank you for your time and consideration and your coins as well"])
 # queen_anns_revenge.process({a:"Data science is great!",b:"I have a Bachelors in Math and Coin science",c:"Don't I sound like it?",d:"I would certanly treasure a chance to meet and interview for a junior dev position!"})
 # queen_anns_revenge.process("my name is matt")
-p queen_anns_revenge.process(jolly_roger, montley_crue)
-p montley_crue.size
-p jolly_roger.size
+# p queen_anns_revenge.process(jolly_roger, montley_crue)
+# p montley_crue.size
+# p jolly_roger.size
 # queen_anns_revenge.process(queen_anns_revenge)
 # queen_anns_revenge.process(:tortuga)
 # p jolly_roger.is_a? Ship
