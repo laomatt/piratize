@@ -1,6 +1,4 @@
 require 'talk_like_a_pirate'
-# require 'rspec'
-# require 'spec_helper'
 class PartyRepelledError < StandardError ; end
 class NoTreasureError < StandardError ; end
 class WhatBeThisError < StandardError ; end
@@ -20,7 +18,6 @@ module Ship
     end
 
     def process(array, position=0, boarders=BoardingParty.new(0))
-    # def process(params)
       if array.class==Array
         puts translate(array[position])
         if array[position+1]!=nil
@@ -50,15 +47,23 @@ module Ship
       else
         puts translate(array)
       end
-
-
   end
 end
+
+
 
 class BoardingParty
 attr_accessor :size
   def initialize(size)
     @size = size
+  end
+end
+
+class ShipWreck
+  attr_accessor :original_ship
+  def initialize ship
+    @original_ship = ship
+    ship.sink!
   end
 end
 
@@ -91,14 +96,6 @@ class Piratize
   end
 end
 
-class ShipWreck
-  attr_accessor :original_ship
-  def initialize ship
-    @original_ship = ship
-    ship.sink!
-  end
-end
-
 queen_anns_revenge=Piratize.new(34,67)
 jolly_roger=Piratize.new(3,0)
 no_crue=BoardingParty.new(12)
@@ -107,10 +104,8 @@ ship = ShipWreck.new queen_anns_revenge
 
 
 
-# queen_anns_revenge.process([1,2,3])
-# queen_anns_revenge.process({a:1,b:2,c:3,d:3})
-# queen_anns_revenge.process(["Hello, my name is Matt", "I live in San Francisco, at exactl 2.3 miles from the dogpatch area", "I am a web developer", "looking for a full time position", "where I can earn gold", "thank you for your time and consideration and your coins as well"])
-# queen_anns_revenge.process({a:"Data science is great!",b:"I have a Bachelors in Math and Coin science",c:"Don't I sound like it?",d:"I would certanly treasure a chance to meet and interview for a junior dev position!"})
+queen_anns_revenge.process(["Hello, my name is Matt", "I live in San Francisco, at exactl 2.3 miles from the dogpatch area", "I am a web developer", "looking for a full time position", "where I can earn gold", "thank you for your time and consideration and your coins as well"])
+queen_anns_revenge.process({a:"Data science is great!",b:"I have a Bachelors in Math and Coin science",c:"Don't I sound like it?",d:"I would certanly treasure a chance to meet and interview for a junior dev position!"})
 # queen_anns_revenge.process("my name is matt")
 p queen_anns_revenge.process(jolly_roger, montley_crue)
 p montley_crue.size
